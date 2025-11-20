@@ -19,9 +19,6 @@ const createTarStream = async (ctl: TarPackController) => {
 		for (let i = 0; i < 1024; i++) {
 			await w.write(new Uint8Array(dataSize / 1024).fill(target.charCodeAt(0)));
 		}
-		// await w.write(new Uint8Array(dataSize).fill(1));
-		// 1KBのデータを書き込む
-		// await w.write(new Uint8Array(1024).fill(1));
 		await w.close()
 	}
 	ctl.finalize()
